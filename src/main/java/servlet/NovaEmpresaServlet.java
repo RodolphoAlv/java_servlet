@@ -1,5 +1,6 @@
 package servlet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,9 @@ public class NovaEmpresaServlet extends HttpServlet {
         Banco banco = new Banco();
         banco.adiciona(empresa);
 
-        out.println(String.format("<html><body>Empresa %s Cadastrada com sucesso!</body></html>", nomeEmpresa));
+        req.setAttribute("empresa", empresa.getNome());
 
+        RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresaCriada.jsp");
+        rd.forward(req, resp);
     }
 }
