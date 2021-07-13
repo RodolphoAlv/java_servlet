@@ -8,6 +8,6 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        Nome da empresa é <%= nomeEmpresa %>
+        A empresa <%= nomeEmpresa %> foi cadastrada com sucesso!
     </body>
 </html>
