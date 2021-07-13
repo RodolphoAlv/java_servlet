@@ -8,6 +8,8 @@
     <title>Title</title>
 </head>
 <body>
+    Lista de empresas: <br/>
+
     <ul>
     <%
     List<Empresa> empresas = (List<Empresa>) request.getAttribute("empresas");
