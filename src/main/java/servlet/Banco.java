@@ -36,4 +36,22 @@ public class Banco {
                 .filter(empresa -> empresa.getId() != id)
                 .collect(Collectors.toList());
     }
+
+    public Empresa buscarEmpresaPeloId(Integer id) {
+        for(Empresa empresa : Banco.empresasLista) {
+            if (empresa.getId() == id) {
+                return empresa;
+            }
+        }
+        return null;
+    }
+
+    public void alteraEmpresa(Empresa empresaAlterada) {
+
+        Banco.empresasLista = Banco.empresasLista.stream()
+                .map(empresa -> empresa.getId().equals(empresaAlterada.getId())
+                        ? empresaAlterada
+                        : empresa)
+                .collect(Collectors.toList());
+    }
 }

@@ -9,7 +9,6 @@
     <title>Title</title>
 </head>
 <body>
-
     <form action="${ linkNovaEmpresaCriada }" method="post">
         Nome: <input type="text" name="nome" /> <br/>
         Data de abertura: <input type="text" name="data" /> <br/>
