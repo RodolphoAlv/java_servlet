@@ -1,5 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import=" java.util.List, servlet.Empresa"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,11 +8,15 @@
     <title>Title</title>
 </head>
 <body>
-<%
-String[] empresas = (String[]) request.getAttribute("empresas");
-for(String empresa : empresas) {
-    out.println("<li>" + empresa + "</li>");
-}
-%>
+    <ul>
+    <%
+    List<Empresa> empresas = (List<Empresa>) request.getAttribute("empresas");
+    for(Empresa empresa : empresas) {
+    %>
+        <li><%= empresa.getNome() %></li>
+    <%
+    }
+    %>
+    </ul>
 </body>
 </html>

@@ -18,12 +18,8 @@ public class ListaEmpresasServlet extends HttpServlet {
         Banco banco = new Banco();
 
         List<Empresa> empresas = banco.getEmpresas();
-        String[] empresasArray = new String[empresas.size()];
 
-        for(int i = 0; i < empresasArray.length ; i++)
-            empresasArray[i] = empresas.get(i).getNome();
-
-        req.setAttribute("empresas", empresasArray);
+        req.setAttribute("empresas", empresas);
         RequestDispatcher rd = req.getRequestDispatcher("/listaEmpresasHandler.jsp");
         rd.forward(req, resp);
     }
