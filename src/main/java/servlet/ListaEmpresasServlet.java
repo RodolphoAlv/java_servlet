@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @WebServlet(urlPatterns = "/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Banco banco = new Banco();
 
         List<Empresa> empresas = banco.getEmpresas();

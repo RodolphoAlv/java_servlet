@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
+<c:url value="/removeEmpresa" var="removeEmpresa" />
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,6 +13,9 @@
     <title>Title</title>
 </head>
 <body>
+    <c:if test="${ not empty empresa }">
+        A empresa ${ empresa } foi cadastrada com sucesso!
+    </c:if>
     Lista de empresas: <br/>
 
     <ul>
@@ -20,6 +25,7 @@
                     value="${ empresa.dataAbertura }"
                     pattern="dd/MM/yyyy"
                 />
+                <a href="${ removeEmpresa }?id=${ empresa.id }">remove</a>
             </li>
         </c:forEach>
     </ul>
